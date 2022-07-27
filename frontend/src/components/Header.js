@@ -20,21 +20,28 @@ const Header = () => {
     <header>
       <Navbar
         variant='light'
-        expand='md'
+        expand='lg'
         collapseOnSelect
-        className='border-bottom shadow p-3'
+        className='border-bottom shadow p-2'
       >
         <Container>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Route render={({ history }) => <SearchBox history={history} />} />
-            <Nav className='ml-auto '>
+            <Nav
+              className='ml-auto align-items-center'
+              style={{ columnGap: '10px' }}
+            >
+              <LinkContainer to='/aboutus'>
+                <Nav.Link>About US</Nav.Link>
+              </LinkContainer>
               {userInfo ? (
                 <>
                   <NavDropdown
                     title={userInfo.name}
                     id='username'
-                    style={{ fontSize: '1rem' }}
+                    style={{ fontSize: '14px' }}
+                    className='m-0'
                   >
                     {userInfo.isAdmin && (
                       <>

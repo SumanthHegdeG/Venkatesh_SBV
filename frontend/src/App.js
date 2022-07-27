@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
-import { Container, Navbar } from 'react-bootstrap'
+import { Container, Image, Navbar } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomeScreen from './screens/HomeScreen'
@@ -18,21 +18,29 @@ import UserEditScreen from './screens/UserEditScreen'
 import ProductListScreen from './screens/ProductListScreen'
 import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
+import AboutUs from './screens/AboutUs'
 import { LinkContainer } from 'react-router-bootstrap'
-import { useSelector } from 'react-redux'
-
+import img from './SBV-Logo.png'
 const App = () => {
   return (
     <Router>
       <Navbar
-        className='p-0 d-flex justify-content-center p-2'
-        variant='dark'
-        bg='dark'
-        style={{ position: 'sticky', top: '0px', zIndex: 99 }}
+        className='p-0 d-flex justify-content-center'
+        style={{
+          position: 'sticky',
+          top: '0px',
+          zIndex: 99,
+          backgroundColor: '#ddf3fd',
+        }}
       >
         <LinkContainer to='/'>
           <Navbar.Brand>
-            <h1 className='text-white m-0 p-0'>HMART</h1>
+            <div className='d-flex align-items-center'>
+              <div style={{ width: '50px' }}>
+                <Image src={img} fluid />
+              </div>
+              <h2 className='m-0 ml-3 p-0'>SBV Logistics</h2>
+            </div>
           </Navbar.Brand>
         </LinkContainer>
       </Navbar>
@@ -44,6 +52,7 @@ const App = () => {
           <Route path='/payment' component={PaymentScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />
           <Route path='/login' component={LoginScreen} />
+          <Route path='/aboutus' component={AboutUs} />
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
           <Route path='/product/:id' component={ProductScreen} />
