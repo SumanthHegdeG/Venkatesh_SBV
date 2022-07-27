@@ -36,10 +36,10 @@ const App = () => {
         <LinkContainer to='/'>
           <Navbar.Brand>
             <div className='d-flex align-items-center'>
-              <div style={{ width: '50px' }}>
+              <div style={{ width: '4rem' }}>
                 <Image src={img} fluid />
               </div>
-              <h2 className='m-0 ml-3 p-0'>SBV Logistics</h2>
+              <h2 className='m-0 ml-3 p-0'>SBV Infotech</h2>
             </div>
           </Navbar.Brand>
         </LinkContainer>

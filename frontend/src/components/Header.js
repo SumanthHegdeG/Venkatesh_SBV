@@ -29,7 +29,7 @@ const Header = () => {
           <Navbar.Collapse id='basic-navbar-nav'>
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav
-              className='ml-auto align-items-center'
+              className='ml-auto align-items-lg-center'
               style={{ columnGap: '10px' }}
             >
               <LinkContainer to='/aboutus'>
