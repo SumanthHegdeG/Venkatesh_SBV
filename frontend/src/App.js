@@ -24,26 +24,6 @@ import img from './SBV-Logo.png'
 const App = () => {
   return (
     <Router>
-      <Navbar
-        className='p-0 d-flex justify-content-center'
-        style={{
-          position: 'sticky',
-          top: '0px',
-          zIndex: 99,
-          backgroundColor: '#ddf3fd',
-        }}
-      >
-        <LinkContainer to='/'>
-          <Navbar.Brand>
-            <div className='d-flex align-items-center'>
-              <div style={{ width: '4rem' }}>
-                <Image src={img} fluid />
-              </div>
-              <h2 className='m-0 ml-3 p-0'>SBV Infotech</h2>
-            </div>
-          </Navbar.Brand>
-        </LinkContainer>
-      </Navbar>
       <Header />
       <main className='my-5'>
         <Container>

@@ -64,14 +64,7 @@ const HomeScreen = ({ match }) => {
           Go Back
         </Link>
       )}
-      <h3 className='mt-5 text-center'>
-        <span
-          className=' border-danger mr-3 px-3'
-          style={{ borderLeft: '4px solid', borderRight: '4px solid' }}
-        >
-          Latest Products
-        </span>
-      </h3>
+
       <div className='d-none d-lg-block d-xl-block'>
         <FormCheck
           type='switch'

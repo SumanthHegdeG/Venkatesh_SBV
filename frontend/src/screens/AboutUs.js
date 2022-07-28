@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button, Col, Image, Row } from 'react-bootstrap'
 import img from '../images/homeImg.png'
 import img1 from '../images/aboutUsImg.jpg'
+import ContactForm from '../components/ContactForm'
 const AboutUs = () => {
+  const [openContact, SetOpenContact] = useState(false)
   return (
     <>
+      <ContactForm openContact={openContact} SetOpenContact={SetOpenContact} />
       <section id='home'>
         <Row className='justify-content-center align-items-center'>
           <Col lg={{ order: 'last' }} md={6} sm={7} xs={9}>
@@ -26,7 +29,11 @@ const AboutUs = () => {
 
             <div className='mt-3 d-flex gap-4 buttons'>
               <a href='#contact'>
-                <Button size='lg' className='mt-3 p-3 bg-info'>
+                <Button
+                  size='lg'
+                  className='mt-3 p-3 bg-info'
+                  onClick={() => SetOpenContact(true)}
+                >
                   Contact Me
                 </Button>
               </a>

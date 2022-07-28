@@ -2,9 +2,10 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from 'react-router-bootstrap'
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+import { Image, Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
+import img from '../SBV-Logo.png'
 
 const Header = () => {
   const dispatch = useDispatch()
@@ -17,21 +18,43 @@ const Header = () => {
   }
 
   return (
-    <header>
+    <header
+      style={{
+        position: 'sticky',
+        top: '0px',
+        zIndex: 99,
+        backgroundColor: '#ddf3fd',
+      }}
+    >
       <Navbar
         variant='light'
         expand='lg'
         collapseOnSelect
-        className='border-bottom shadow p-2'
+        className='border-bottom shadow p-1'
       >
         <Container>
+          <LinkContainer to='/'>
+            <Navbar.Brand>
+              <div className='d-flex align-items-center'>
+                <div style={{ width: '4rem' }}>
+                  <Image src={img} fluid />
+                </div>
+                <h5 className='m-0  p-0'>SBV Infotech</h5>
+              </div>
+            </Navbar.Brand>
+          </LinkContainer>
+
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
+
           <Navbar.Collapse id='basic-navbar-nav'>
             <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav
               className='ml-auto align-items-lg-center'
               style={{ columnGap: '10px' }}
             >
+              <LinkContainer to='/'>
+                <Nav.Link>Home</Nav.Link>
+              </LinkContainer>
               <LinkContainer to='/aboutus'>
                 <Nav.Link>About US</Nav.Link>
               </LinkContainer>
