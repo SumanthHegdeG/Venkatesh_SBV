@@ -33,21 +33,22 @@ const Header = () => {
         className='border-bottom shadow p-1'
       >
         <Container>
-          <LinkContainer to='/'>
+          <LinkContainer to='/' className='m-0'>
             <Navbar.Brand>
               <div className='d-flex align-items-center'>
                 <div style={{ width: '4rem' }}>
                   <Image src={img} fluid />
                 </div>
-                <h5 className='m-0  p-0'>SBV Infotech</h5>
+                <h5 className='m-0  p-0 d-none d-lg-block d-xl-block mr-5'>
+                  SBV Infotech
+                </h5>
               </div>
             </Navbar.Brand>
           </LinkContainer>
-
+          <Route render={({ history }) => <SearchBox history={history} />} />
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
 
           <Navbar.Collapse id='basic-navbar-nav'>
-            <Route render={({ history }) => <SearchBox history={history} />} />
             <Nav
               className='ml-auto align-items-lg-center'
               style={{ columnGap: '10px' }}

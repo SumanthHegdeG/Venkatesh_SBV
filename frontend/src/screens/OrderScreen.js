@@ -35,8 +35,6 @@ const OrderScreen = ({ match, history }) => {
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
 
-  console.log(order, userInfo)
-
   if (!loading) {
     //   Calculate prices
     const addDecimals = (num) => {
@@ -79,7 +77,6 @@ const OrderScreen = ({ match, history }) => {
   }, [dispatch, orderId, successPay, successDeliver, order])
 
   const successPaymentHandler = (paymentResult) => {
-    console.log(paymentResult)
     dispatch(payOrder(orderId, paymentResult))
   }
 
@@ -198,20 +195,20 @@ const OrderScreen = ({ match, history }) => {
                   <Col>Rs {order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
-              {!order.isPaid && userInfo && order.user._id === userInfo._id && (
+
+              {loadingDeliver && <Loader />}
+
+              {userInfo.isAdmin && !order.isPaid && (
                 <ListGroup.Item>
-                  {loadingPay && <Loader />}
-                  {!sdkReady ? (
-                    <Loader />
-                  ) : (
-                    <PayPalButton
-                      amount={order.totalPrice}
-                      onSuccess={successPaymentHandler}
-                    />
-                  )}
+                  <Button
+                    type='button'
+                    className='btn btn-block btn-info rounded-pill'
+                    onClick={successPaymentHandler}
+                  >
+                    Mark as Paid
+                  </Button>
                 </ListGroup.Item>
               )}
-              {loadingDeliver && <Loader />}
               {userInfo && userInfo.isAdmin && !order.isDelivered && (
                 <ListGroup.Item>
                   <Button

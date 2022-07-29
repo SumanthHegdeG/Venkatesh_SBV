@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Button, Col, Image, InputGroup, Row } from 'react-bootstrap'
+import { Button, Col, Image } from 'react-bootstrap'
 import Rating from './Rating'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, removeFromCart } from '../actions/cartActions'
@@ -20,16 +20,20 @@ const Product = ({ product, view }) => {
           className=' p-3 rounded shadow h-100 d-flex'
           style={{ flexDirection: 'column', justifyContent: 'space-between' }}
         >
-          <div>
+          <div style={{ minHeight: '150px' }}>
             <Link to={`/product/${product._id}`}>
               <Image src={product.image} alt={product.name} fluid />
             </Link>
           </div>
-          <hr />
+          <hr className='w-100' />
           <div>
             <Link to={`/product/${product._id}`}>
               <div>
                 <strong>{product.name}</strong>
+
+                <p style={{ maxHeight: '40px', overflowY: 'hidden' }}>
+                  {product.description}
+                </p>
               </div>
             </Link>
             <div>
@@ -87,7 +91,7 @@ const Product = ({ product, view }) => {
   } else
     return (
       <div
-        className=' p-3 rounded shadow d-flex w-100 my-4 col-md-10'
+        className=' p-3 rounded shadow d-flex w-100 my-4 col-md-10 justify-content-between'
         style={{ columnGap: '0.5rem', minHeight: '200px' }}
       >
         <div className='col-4'>
@@ -113,6 +117,9 @@ const Product = ({ product, view }) => {
             <Link to={`/product/${product._id}`}>
               <div>
                 <strong>{product.name}</strong>
+                <p style={{ maxHeight: '40px', overflowY: 'hidden' }}>
+                  {product.description}>
+                </p>
               </div>
             </Link>
             <div>

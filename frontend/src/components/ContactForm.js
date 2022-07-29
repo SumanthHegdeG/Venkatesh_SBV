@@ -73,7 +73,9 @@ const ContactForm = ({ openContact, SetOpenContact }) => {
       setValidate((state) => ({ ...state, errors: { ...errors } }))
     else {
       SetOpenContact(false)
-      alert(validate.values)
+
+      alert(JSON.stringify(validate.values))
+      setValidate({ values: {}, errors: {} })
     }
   }
   return (
