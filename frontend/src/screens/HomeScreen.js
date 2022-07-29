@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Button, FormCheck } from 'react-bootstrap'
+import { FormCheck } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'

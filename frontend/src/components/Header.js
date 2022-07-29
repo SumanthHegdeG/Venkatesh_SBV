@@ -53,12 +53,16 @@ const Header = () => {
               className='ml-auto align-items-lg-center'
               style={{ columnGap: '10px' }}
             >
-              <LinkContainer to='/'>
-                <Nav.Link>Home</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to='/aboutus'>
-                <Nav.Link>About US</Nav.Link>
-              </LinkContainer>
+              {(!userInfo || (userInfo && !userInfo.isAdmin)) && (
+                <>
+                  <LinkContainer to='/'>
+                    <Nav.Link>Home</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to='/aboutus'>
+                    <Nav.Link>About US</Nav.Link>
+                  </LinkContainer>
+                </>
+              )}
               {userInfo ? (
                 <>
                   <NavDropdown

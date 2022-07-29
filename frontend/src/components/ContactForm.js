@@ -123,7 +123,7 @@ const ContactForm = ({ openContact, SetOpenContact }) => {
               name='phone'
               onChange={handleChange}
               onBlur={handleChange}
-              placeholder={'Enter Email ...'}
+              placeholder={'Enter Phone Number ...'}
               value={validate.values.phone || ''}
             />
             {validate.errors.phone && (
