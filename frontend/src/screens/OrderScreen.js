@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { PayPalButton } from 'react-paypal-button-v2'
+
 import { Link } from 'react-router-dom'
 import { Row, Col, ListGroup, Image, Card, Button } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -102,6 +102,10 @@ const OrderScreen = ({ match, history }) => {
               <p>
                 <strong>Email: </strong>{' '}
                 <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
+              </p>
+
+              <p>
+                <strong>Phone: </strong> {order.shippingAddress.phone}
               </p>
               <p>
                 <strong>Address:</strong>

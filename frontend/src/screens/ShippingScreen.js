@@ -11,15 +11,18 @@ const ShippingScreen = ({ history }) => {
   const { shippingAddress } = cart
 
   const [address, setAddress] = useState(shippingAddress.address)
+  const [phone, setPhone] = useState(shippingAddress.phone)
   const [city, setCity] = useState(shippingAddress.city)
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
+  const [state, setState] = useState(shippingAddress.state)
   const [country, setCountry] = useState(shippingAddress.country)
-
   const dispatch = useDispatch()
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(saveShippingAddress({ address, city, postalCode, country }))
+    dispatch(
+      saveShippingAddress({ address, phone, city, postalCode, state, country })
+    )
     history.push('/payment')
   }
 
@@ -47,6 +50,18 @@ const ShippingScreen = ({ history }) => {
           ></Form.Control>
         </Form.Group>
 
+        <Form.Group controlId='phone'>
+          <Form.Label>Phone</Form.Label>
+          <Form.Control
+            type='tel'
+            placeholder='Enter Phone number'
+            value={phone}
+            required
+            onChange={(e) => setPhone(e.target.value)}
+            pattern='[0-9]{10}'
+          ></Form.Control>
+        </Form.Group>
+
         <Form.Group controlId='city'>
           <Form.Label>City</Form.Label>
           <Form.Control
@@ -69,11 +84,21 @@ const ShippingScreen = ({ history }) => {
           ></Form.Control>
         </Form.Group>
 
+        <Form.Group controlId='state'>
+          <Form.Label>State</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Enter State'
+            value={state}
+            required
+            onChange={(e) => setState(e.target.value)}
+          ></Form.Control>
+        </Form.Group>
         <Form.Group controlId='country'>
           <Form.Label>Country</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter country'
+            placeholder='Enter Country'
             value={country}
             required
             onChange={(e) => setCountry(e.target.value)}
