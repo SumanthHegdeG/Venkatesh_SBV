@@ -21,6 +21,7 @@ import OrderListScreen from './screens/OrderListScreen'
 import AboutUs from './screens/AboutUs'
 import { LinkContainer } from 'react-router-bootstrap'
 import img from './SBV-Logo.png'
+import MessageListScreen from './screens/MessageListScreen'
 const App = () => {
   return (
     <Router>
@@ -42,6 +43,11 @@ const App = () => {
           <Route
             path='/admin/productlist'
             component={ProductListScreen}
+            exact
+          />
+          <Route
+            path='/admin/messagelist'
+            component={MessageListScreen}
             exact
           />
           <Route
