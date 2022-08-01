@@ -83,7 +83,7 @@ const Header = () => {
                           <NavDropdown.Item>Orders</NavDropdown.Item>
                         </LinkContainer>
                         <LinkContainer to='/admin/messagelist'>
-                          <NavDropdown.Item>Messages</NavDropdown.Item>
+                          <NavDropdown.Item>Queries</NavDropdown.Item>
                         </LinkContainer>
                       </>
                     )}

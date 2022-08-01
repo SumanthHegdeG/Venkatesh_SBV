@@ -36,7 +36,9 @@ const Footer = () => {
         </Row>
         <hr style={{ backgroundColor: 'grey' }} />
         <Row>
-          <Col className='text-center py-3'>Copyright &copy; SBV Infotech</Col>
+          <Col className='text-center py-3'>
+            Copyright &copy; Hegde Brothers
+          </Col>
         </Row>
       </Container>
     </footer>

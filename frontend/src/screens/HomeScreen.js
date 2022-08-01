@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { FormCheck } from 'react-bootstrap'
 import Product from '../components/Product'
@@ -27,6 +27,8 @@ const HomeScreen = ({ match }) => {
 
   const dispatch = useDispatch()
 
+  const history = useHistory()
+
   const productList = useSelector((state) => state.productList)
   const { loading, error, products, page, pages } = productList
 
@@ -49,13 +51,14 @@ const HomeScreen = ({ match }) => {
 
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber))
+    if (userInfo && userInfo.isAdmin) {
+      history.push('/admin/productlist')
+    }
   }, [dispatch, keyword, pageNumber])
 
   const userLogin = useSelector((state) => state.userLogin)
   const { userInfo } = userLogin
-  if (userInfo && userInfo.isAdmin) {
-    return <Redirect to='/admin/productlist' />
-  }
+
   return (
     <>
       <Meta />
