@@ -18,13 +18,19 @@ const Product = ({ product, view }) => {
       <Col key={product._id} sm={12} md={6} lg={4} xl={3} className='py-3'>
         <div
           className=' p-3 rounded shadow h-100 d-flex'
-          style={{ flexDirection: 'column', justifyContent: 'space-between' }}
+          style={{ flexDirection: 'column' }}
         >
-          <div style={{ minHeight: '150px' }}>
-            <Link to={`/product/${product._id}`}>
-              <Image src={product.image} alt={product.name} fluid />
-            </Link>
-          </div>
+          <Link to={`/product/${product._id}`}>
+            <div className='d-flex justify-content-center'>
+              <Image
+                src={product.image}
+                alt={product.name}
+                fluid
+                style={{ objectFit: 'contain', height: '150px' }}
+              />
+            </div>
+          </Link>
+
           <hr className='w-100' />
           <div>
             <Link to={`/product/${product._id}`}>
@@ -42,7 +48,10 @@ const Product = ({ product, view }) => {
                 text={`${product.numReviews} reviews`}
               />
             </div>
-            <h3>Rs {product.price}</h3>
+            <h3>
+              Rs {product.price}
+              <sup>*</sup>
+            </h3>
             <div className='d-flex justify-content-center py-3'>
               {quantity ? (
                 <div
@@ -90,18 +99,22 @@ const Product = ({ product, view }) => {
     )
   } else
     return (
-      <div
-        className=' p-3 rounded shadow d-flex w-100 my-4 col-md-10 justify-content-between'
-        style={{ columnGap: '0.5rem', minHeight: '200px' }}
-      >
+      <div className=' p-3 rounded shadow d-flex w-100 my-4 col-md-10 justify-content-between'>
         <div className='col-4'>
           <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
+            <div className='d-flex justify-content-center align-items-center'>
+              <Image
+                src={product.image}
+                alt={product.name}
+                fluid
+                style={{ objectFit: 'contain', height: '150px' }}
+              />
+            </div>
           </Link>
         </div>
 
         <div
-          className='d-flex col-7'
+          className='d-flex col-8'
           style={{
             justifyContent: 'space-between',
             columnGap: '0.5rem',
@@ -118,7 +131,7 @@ const Product = ({ product, view }) => {
               <div>
                 <strong>{product.name}</strong>
                 <p style={{ maxHeight: '40px', overflowY: 'hidden' }}>
-                  {product.description}>
+                  {product.description}
                 </p>
               </div>
             </Link>
@@ -128,9 +141,19 @@ const Product = ({ product, view }) => {
                 text={`${product.numReviews} reviews`}
               />
             </div>
-            <h3>Rs {product.price}</h3>
+            <h3>
+              Rs {product.price}
+              <sup>*</sup>
+            </h3>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              minWidth: '150px',
+            }}
+          >
             {quantity ? (
               <div
                 className='border d-flex align-items-center'

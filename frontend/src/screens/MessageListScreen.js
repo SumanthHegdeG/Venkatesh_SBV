@@ -9,8 +9,6 @@ import { deleteContact, listContacts } from '../actions/contactActions'
 const MessageListScreen = ({ history }) => {
   const dispatch = useDispatch()
 
-  const [showMore, setShowMore] = useState({})
-
   const contactList = useSelector((state) => state.contactList)
   const { loading, error, contacts } = contactList
 

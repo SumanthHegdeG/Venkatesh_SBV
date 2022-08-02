@@ -22,12 +22,14 @@ import AboutUs from './screens/AboutUs'
 import { LinkContainer } from 'react-router-bootstrap'
 import img from './SBV-Logo.png'
 import MessageListScreen from './screens/MessageListScreen'
+import WhatsappFloatingButton from './components/WhatsappFloatingButton'
 const App = () => {
   return (
     <Router>
       <Header />
       <main className='my-5'>
         <Container>
+          <WhatsappFloatingButton />
           <Route path='/order/:id' component={OrderScreen} />
           <Route path='/shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
