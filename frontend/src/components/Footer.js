@@ -6,7 +6,10 @@ const Footer = () => {
   return (
     <footer style={{ backgroundColor: 'black', color: 'white' }}>
       <Container>
-        <Row className='flex-md-row flex-column py-5'>
+        <Row
+          className='flex-md-row flex-column py-4'
+          style={{ rowGap: '3rem' }}
+        >
           <Col>
             <h4 className='text-white'>SBV INFOTECH</h4>
             <div
