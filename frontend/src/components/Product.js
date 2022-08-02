@@ -30,9 +30,16 @@ const Product = ({ product, view }) => {
               />
             </div>
           </Link>
-
           <hr className='w-100' />
-          <div>
+          <div
+            className='d-flex'
+            style={{
+              flex: 1,
+
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+            }}
+          >
             <Link to={`/product/${product._id}`}>
               <div>
                 <strong>{product.name}</strong>
