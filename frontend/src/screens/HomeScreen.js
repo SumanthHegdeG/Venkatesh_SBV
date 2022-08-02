@@ -86,7 +86,7 @@ const HomeScreen = ({ match }) => {
         <>
           <div
             className={`d-flex flex-wrap ${
-              !verticalView ? 'align-items-center' : 'justify-content-center'
+              !verticalView && 'align-items-center'
             }`}
             style={{ flexDirection: verticalView ? 'row' : 'column' }}
           >
