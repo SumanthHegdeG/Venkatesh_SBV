@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 import { MdContactPhone, MdEmail } from 'react-icons/md'
+import { SiGooglemaps } from 'react-icons/si'
 const Footer = () => {
   return (
     <footer style={{ backgroundColor: 'black', color: 'white' }}>
@@ -44,7 +45,13 @@ const Footer = () => {
               <p> bengaluru-560010</p>
             </div>
             <a href='https://g.co/kgs/NDs4EM' target='#'>
-              <Button>See in Google</Button>
+              <Button className='p-0 py-2 px-3'>
+                <span style={{ fontSize: '15px ' }}>
+                  <SiGooglemaps />
+                </span>
+                {'     '}
+                Map
+              </Button>
             </a>
           </Col>
         </Row>
