@@ -6,10 +6,13 @@ const Footer = () => {
   return (
     <footer style={{ backgroundColor: 'black', color: 'white' }}>
       <Container>
-        <Row className='flex-md-row flex-column'>
-          <Col className='m-3 '>
+        <Row className='flex-md-row flex-column py-5'>
+          <Col>
             <h4 className='text-white'>SBV INFOTECH</h4>
-            <div className='ml-3'>
+            <div
+              className='ml-3'
+              style={{ fontSize: '16px', fontWeight: '700' }}
+            >
               <p>
                 <strong>
                   Phone <MdContactPhone style={{ fontSize: '24px' }} /> :{' '}
@@ -36,9 +39,12 @@ const Footer = () => {
             </div>
             <h5 style={{ color: 'white' }}>GSTIN-29AFCPV7553A1ZA</h5>
           </Col>
-          <Col className='m-3'>
+          <Col>
             <h5 style={{ color: 'white' }}>Address :</h5>
-            <div className='ml-3' style={{ fontWeight: 'bolder' }}>
+            <div
+              className='ml-3'
+              style={{ fontWeight: '700', fontSize: '16px' }}
+            >
               <p>Chitpavana suvarna bhavana #507,</p>
               <p> 65th cross, 5th block,</p>
               <p>rajajinagar,</p>
