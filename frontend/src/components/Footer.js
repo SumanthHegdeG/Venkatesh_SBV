@@ -50,7 +50,7 @@ const Footer = () => {
               <p>rajajinagar,</p>
               <p> bengaluru-560010</p>
             </div>
-            <a href='https://g.co/kgs/NDs4EM' target='#'>
+            <a href='https://goo.gl/maps/v1Mr2YRAmtvDbp7P8' target='#'>
               <Button className='p-0 py-2 px-3'>
                 <span style={{ fontSize: '15px ' }}>
                   <SiGooglemaps />
