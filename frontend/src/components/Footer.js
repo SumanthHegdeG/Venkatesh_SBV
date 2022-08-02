@@ -46,12 +46,24 @@ const Footer = () => {
             <h5 style={{ color: 'white' }}>Address :</h5>
             <div
               className='ml-3'
-              style={{ fontWeight: '700', fontSize: '16px' }}
+              style={{
+                fontWeight: '700',
+                fontSize: '16px',
+                textTransform: 'uppercases',
+              }}
             >
-              <p>Chitpavana suvarna bhavana #507,</p>
-              <p> 65th cross, 5th block,</p>
-              <p>rajajinagar,</p>
-              <p> bengaluru-560010</p>
+              <h6 style={{ color: 'white', fontSize: '16px' }}>
+                Chitpavana suvarna bhavana #507,
+              </h6>
+              <h6 style={{ color: 'white', fontSize: '16px' }}>
+                {' '}
+                65th cross, 5th block,
+              </h6>
+              <h6 style={{ color: 'white', fontSize: '16px' }}>rajajinagar,</h6>
+              <h6 style={{ color: 'white', fontSize: '16px' }}>
+                {' '}
+                bengaluru-560010
+              </h6>
             </div>
             <a href='https://goo.gl/maps/diSYEQw5ntHcKv1q7' target='#'>
               <Button className='p-0 py-2 px-3'>
