@@ -56,7 +56,7 @@ const Product = ({ product, view }) => {
               />
             </div>
             <h3>
-              Rs {product.price}
+              ₹ {product.price}
               <sup>*</sup>
             </h3>
             <div className='d-flex justify-content-center py-3'>
@@ -149,7 +149,7 @@ const Product = ({ product, view }) => {
               />
             </div>
             <h3>
-              Rs {product.price}
+              ₹ {product.price}
               <sup>*</sup>
             </h3>
           </div>
